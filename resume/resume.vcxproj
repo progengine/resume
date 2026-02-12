@@ -24,6 +24,7 @@
     <ProjectGuid>{c6d2ea25-984c-47bd-86f1-776206efa872}</ProjectGuid>
     <RootNamespace>resume</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>podstroki</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">

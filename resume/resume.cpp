@@ -1,53 +1,38 @@
 ﻿#include <iostream>
 using namespace std;
-#include <unordered_set>
 #include <array>
-#include <vector>
-
+#include <string>
 
 int main() {
-	int n;
-	int m;
+	string s;
+	cin >> s;
 
-	cin >> n >> m;
+	int le = s.length();
 
+	int bukv;
+	int index_bukv;
 
-	int* arr1 = new int[n];
-	int* arr2 = new int[m];
-
-
-	unordered_set<int> hash;
-
-	for (int i = 0; i < n; i++) {
-		cin >> arr1[i];
-		hash.insert(arr1[i]);
+	int arr[26] = { -1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1};
+	for (int i = 0; i < le; i++) {
+		bukv = s[i] - 'A';
+		index_bukv = bukv;
+		arr[index_bukv] = i;
 
 	}
 
-	for (int j = 0; j < m; j++) {
-		cin >> arr2[j];
-	}
+	int maxlen = 1;
+	int lek;
 
-	int total = 0;
-	vector<int> v;
-	
-
-
-	for (int d = 0; d < m; d++) {
-		if (hash.find(arr2[d]) == hash.end()) {
-			total++;
-			v.push_back(arr2[d]);
+	for (int i = 0; i < le; i++) {
+		int q = i;
+		int kon = arr[s[i] - 'A'];
+		lek = kon - q + 1;
+		if (lek > maxlen) {
+			maxlen = lek;
 		}
 
 	}
 
-	cout << total << endl;
-
-	for (int k = 0; k < v.size(); k++) {
-		cout << v[k] << " ";
-	}
-
-	delete[] arr1;
-	delete[] arr2;
+	cout << maxlen;
 
 }
